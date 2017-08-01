@@ -27,8 +27,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // Overrides default login using email
     public function username()
     {
         return 'username';
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 }

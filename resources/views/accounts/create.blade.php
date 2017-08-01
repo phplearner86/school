@@ -12,6 +12,15 @@
                    <form action="{{ route('users.store') }}" method="post">
                        {{ csrf_field() }}
 
+                       {{-- Role --}}
+                       <div class="form-group">
+                         <label >Role</label>
+                           <p>@foreach ($roles as $role)
+                               <input type="checkbox" name="role_id[]" id="{{ $role->name }}" value="{{ $role->id }}">{{ ucfirst($role->name) }}
+                             @endforeach</p>
+                         
+                       </div>
+
                        {{-- First name --}}
                       <div class="form-group">
                            <label for="first_name">First Name <span class="asterisk">*</span></label>
