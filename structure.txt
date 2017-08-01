@@ -18,3 +18,10 @@
 11) Dopuna forme role_id[] (checkbox)
 12) attach role to user (store user UserController)
 13) Server-side validation (UserRequest)  
+    -Promena imena atributa u asset/lang/en/validation.php (role_id, dob)
+    -Promena default poruke: public function messages() u ModelRequest-u 
+14) Parsley validacija User::create
+    -Uvesti parsley u folder public/vendor/parsley
+    -Promeniti parsley-errors-list klasu u parsley.css (color i font-size)
+    -Uvesti parsley.css i parsley.min.js u section links i scripts - users.create
+    -Parsley validacija forme i svakog inputa

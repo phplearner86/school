@@ -52,3 +52,8 @@ function name($fn, $ln)
 
     return strtolower($fn . '-' . $ln) . '-'. $no;
 }
+
+function checked($checked, $current)
+{
+    $checked == $current ? 'checked' : '';
+}
