@@ -116,6 +116,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'role_id' => 'role',
+        'dob' => 'date of birth'
+    ],
 
 ];

@@ -7,5 +7,14 @@
 5) Podaci potrbni za pravljenje accounta racuna: ime, prezime, datum rodjenja, uloga
 6) Email: ime.prezimeXY@school.com
 
-7) Users tabela ima 
+7) Users tabela i forma imaju 
     -name, username, email, password
+8) Store user (UserController)
+9) Promena kredencijala u LoginController-u email u username   
+9) Role tabela
+    -name
+10) user_role (many to many)
+    -user_id, role_id     
+11) Dopuna forme role_id[] (checkbox)
+12) attach role to user (store user UserController)
+13) Server-side validation (UserRequest)  

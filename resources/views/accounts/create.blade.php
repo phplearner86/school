@@ -2,6 +2,9 @@
 
 @section('content')
    <div class="row">
+   
+   @include('errors._list')
+
        <div class="col-md-8 col-md-offset-2"> @component('partials.admin._panel')
                @slot('heading')
                    <h2><i class="fa fa-pencil"></i> New account</h2>
