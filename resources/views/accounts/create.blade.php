@@ -11,27 +11,26 @@
                 <p class="required__fields">Fields marked with * are required.</p>
                    <form action="{{ route('users.store') }}" method="post">
                        {{ csrf_field() }}
+
+                       {{-- First name --}}
                       <div class="form-group">
                            <label for="first_name">First Name <span class="asterisk">*</span></label>
                           <input type="text" name="first_name" id="first_name" placeholder="Enter first name" class="form-control" value="{{ old('first_name') }}">
                       </div>
+
+                      {{-- Last name --}}
                       <div class="form-group">
                            <label for="last_name">Last Name <span class="asterisk">*</span></label>
                           <input type="text" name="last_name" id="last_name" placeholder="Enter last name" class="form-control" value="{{ old('last_name') }}">
                       </div>
+
+                      {{-- Dato of birth --}}
                       <div class="form-group">
-                           <label for="name">Name</label>
-                          <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="{{ old('name') }}">
+                           <label for="dob">Date of birth<span class="asterisk">*</span></label>
+                          <input type="text" name="dob" id="dob" placeholder="yyyy-mm-dd" class="form-control" value="{{ old('dob') }}">
                       </div>
-                      <div class="form-group">
-                           <label for="email">Email</label>
-                          <input type="text" name="email" id="email" placeholder="Email" class="form-control" value="{{ old('email') }}">
-                      </div>
-                      <div class="form-group">
-                           <label for="password">Password</label>
-                          <input type="text" name="password" id="password" placeholder="password" class="form-control">
-                      </div>
-           
+
+                      {{-- Button --}}
                       <div class="form-group">
                            <button class="btn btn-primary">Create</button>
                       </div>

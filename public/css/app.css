@@ -8363,6 +8363,25 @@ body.admin {
 }
 
 .required__fields {
-  font-family: 'Gabriela', serif !important;
+  font-family: 'Gabriela', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/*.admin__panel .panel-heading{
+    background: #f9f9f9;
+    padding: 20px 15px;
+}*/
+
+.admin__panel .panel-heading {
+  background: #f9f9f9;
+  padding: 20px 15px;
 }
 

@@ -14,4 +14,19 @@ body.admin{font-family: 'Raleway', sans-serif !important;}
 
 .asterisk{color:red}
 
-.required__fields{font-family: 'Gabriela', serif !important;}
+.required__fields{font-family: 'Gabriela', serif}
+
+h1,h2,h3,h4,h5,h6{margin:0}
+
+/*.admin__panel .panel-heading{
+    background: #f9f9f9;
+    padding: 20px 15px;
+}*/
+
+.admin__panel {
+    & .panel-heading
+    {
+        background: #f9f9f9;
+        padding: 20px 15px;
+    }
+}
