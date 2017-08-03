@@ -41,16 +41,12 @@ function password($fn, $ln, $dob)
 
 function email($fn, $ln)
 {
-    $no = random_int(10, 99);
-
-    return strtolower($fn . '.' . $ln) . $no . '@school.com';
+    return strtolower($fn . '.' . $ln);
 }
 
 function name($fn, $ln)
 {
-    $no = random_int(10, 99);
-
-    return strtolower($fn . '-' . $ln) . '-'. $no;
+    return str_slug($fn . ' ' . $ln);
 }
 
 function checked($checked, $current)
