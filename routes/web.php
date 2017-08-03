@@ -11,3 +11,6 @@ Route::as('pages.')->group(function(){
 });
 
 Route::resource('users', 'UserController');
+Route::resource('students', 'StudentController', [
+    'parameters' => ['students' => 'user']
+    ]);

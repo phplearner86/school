@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
+use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -41,10 +42,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(User $user)
     {
         //
     }
@@ -52,22 +53,24 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(User $user)
     {
-        //
+        //return $user;
+        $roles = Role::all();
+        return view('profiles.students.edit', compact('roles', 'user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -75,10 +78,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(User $user)
     {
         //
     }

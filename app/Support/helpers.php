@@ -51,5 +51,5 @@ function name($fn, $ln)
 
 function checked($checked, $current)
 {
-    $checked == $current ? 'checked' : '';
+    return $checked == $current ? 'checked' : ' ';
 }

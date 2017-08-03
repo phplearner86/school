@@ -27,10 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // Overrides default login using email
-    public function username()
+    public function getRouteKeyName()
     {
-        return 'username';
+        return 'name';
     }
 
     public function roles()
