@@ -38,6 +38,46 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class);
+    }
+
+    public function hasRole($role)
+    {
+        if (is_string($role)) 
+        {
+            return $this->roles->contains('name', $role);
+        }
+
+        return (bool) $role->intersect($this->roles)->count();
+    }
+
+    public function isStudent()
+    {
+        return $this->hasRole('student');
+    }
+
+    public function isTeacher()
+    {
+        return $this->hasRole('teacher');
+    }
+
+    public function isAdmin()
+    {
+        return $this->hasRole('admin');
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->hasRole('superadmin');
+    }
+
     public static function createAccount($data)
     {
         $user = new static;
