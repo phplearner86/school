@@ -87,6 +87,8 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
+    'alpha_spaces'                  => 'Only letters and spaces are allowed for :attribute',
+    'alpha_num_spaces'                  => 'Only letters, numbers and spaces are allowed for :attribute',
 
     /*
     |--------------------------------------------------------------------------
@@ -100,8 +102,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'dob' => [
+            'before' => 'The user must be at least 13 years old.',
         ],
     ],
 

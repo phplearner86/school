@@ -41,7 +41,7 @@ function password($fn, $ln, $dob)
 
 function email($fn, $ln)
 {
-    return strtolower($fn . '.' . $ln);
+    return str_slug($fn . ' ' . $ln);
 }
 
 function name($fn, $ln)
