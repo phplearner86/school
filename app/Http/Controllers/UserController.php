@@ -9,14 +9,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function __construct()
     {
-        //
+        // Authorize
+       $this->authorizeResource(User::class);
     }
 
     /**
@@ -40,45 +37,11 @@ class UserController extends Controller
     {
        $user = User::createAccount($request);
        
-       $user->roles()->attach($request->role_id);
+       $user->assignRole($request->role_id);
 
        return back();
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -88,5 +51,14 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    protected function resourceAbilityMap()
+    {
+        return [
+        'create' => 'touch',
+        'store' => 'touch',
+        'destroy' => 'touch',
+        ];
     }
 }
